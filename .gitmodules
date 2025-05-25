@@ -1,0 +1,4 @@
+[submodule "hewo_modules/hewo_face/HeWo"]
+	path = hewo_modules/hewo_face/HeWo
+	branch = develop
+	url = https://github.com/Daiego43/HeWo.git
