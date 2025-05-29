@@ -9,7 +9,8 @@ services:
     environment:
       DISPLAY: $DISPLAY
       PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
-    command: bash -c ". venv/bin/activate && echo $DISPLAY && hewo_main"
+    command: bash -c "pwd && . venv/bin/activate && hewo_main"
+    working_dir: /app
     volumes:
       - /run/user/1000/pulse/native:/run/user/1000/pulse/native
       - /tmp/.X11-unix:/tmp/.X11-unix:rw

@@ -5,6 +5,7 @@ if [ ! -d "$module_name" ]; then
 else
   echo "Running module $module_name..."
   cd "$module_name" || exit 1
+  echo $(pwd)
   if [ -f "docker-compose.yaml" ]; then
     docker compose up
   else

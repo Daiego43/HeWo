@@ -1,26 +1,24 @@
 FROM ubuntu:latest
-LABEL authors="daiego"
-LABEL description="A Dockerfile and Compose configuration tu run this image with apropriate container settings"
 
+LABEL authors="daiego"
+LABEL description="Image to run HeWo with proper dependencies and persistent venv"
+
+# ── Base dependencies ─────────────────────────────
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-venv \
     libgl1 \
-    libglib2.0-0
-
-RUN apt-get update && apt-get install -y \
+    libglib2.0-0 \
     x11-utils \
     x11-xserver-utils \
-    libxrandr-dev
+    libxrandr-dev \
+    ffmpeg
 
-RUN apt-get update && apt-get install ffmpeg -y
-
-# Install dependencies
+# ── Copy source ───────────────────────────────────
 COPY ./HeWo /app/HeWo
+COPY ./entrypoint.sh /entrypoint.sh
 
-WORKDIR /app
-RUN python3 -m venv venv && . venv/bin/activate && \
-    cd HeWo && pip install .
-
-WORKDIR /app
+# ── Entrypoint ─────────────────────────────────────
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
