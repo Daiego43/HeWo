@@ -1,4 +1,4 @@
-module_name="hewo_modules/$1"
+module_name="modules/$1"
 if [ ! -d "$module_name" ]; then
   echo "Module $module_name does not exist."
   exit 1
