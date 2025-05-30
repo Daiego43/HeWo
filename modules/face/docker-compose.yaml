@@ -11,7 +11,7 @@ services:
     environment:
       DISPLAY: $DISPLAY
       PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
-    command: bash -c "hewo_main"
+    command: hewo_face
     working_dir: /app
     volumes:
       - /run/user/1000/pulse/native:/run/user/1000/pulse/native
