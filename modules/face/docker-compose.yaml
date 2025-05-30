@@ -1,15 +1,17 @@
-
 services:
   hewo_face:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: hewo_face:pygame
     container_name: hewo_face
     privileged: true
     ports:
-      - "5000:5000"
+      - "8000:5000"
     environment:
       DISPLAY: $DISPLAY
       PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
-    command: bash -c "pwd && . venv/bin/activate && hewo_main"
+    command: bash -c "hewo_main"
     working_dir: /app
     volumes:
       - /run/user/1000/pulse/native:/run/user/1000/pulse/native

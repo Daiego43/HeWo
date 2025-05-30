@@ -16,9 +16,5 @@ RUN apt-get update && apt-get install -y \
     ffmpeg
 
 # ── Copy source ───────────────────────────────────
-COPY ./HeWo /app/HeWo
-COPY ./entrypoint.sh /entrypoint.sh
-
-# ── Entrypoint ─────────────────────────────────────
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY ./hewo_module_face /app
+RUN cd /app && pip install . --break-system-packages
