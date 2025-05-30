@@ -1,6 +1,6 @@
 #!/bin/bash
+# Shell script to install RTL8821AU drivers for Wi-Fi adapters
 set -e
-
 echo "🔍 Checking for required packages..."
 sudo apt update
 sudo apt install -y dkms git build-essential

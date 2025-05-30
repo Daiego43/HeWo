@@ -1,0 +1,2 @@
+50:91:e3:1c:47:90
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="<your_wifi_adapter_MAC>", NAME="hewo_antenna"
