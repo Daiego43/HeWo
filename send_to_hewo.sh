@@ -1,3 +1,1 @@
-user=daiego
-hostname=lattepanda.local
-rsync -avz ./* $user@$hostname:/home/$user/HeWo
+sshpass -p "$HEWO_PASS" rsync -avz ./* $HEWO_USER@$HEWO_HOST:/home/$HEWO_USER/HeWo
