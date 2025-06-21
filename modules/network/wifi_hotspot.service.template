@@ -1,0 +1,12 @@
+# wifi_hotspot.service.template
+[Unit]
+Description=HeWo Wi-Fi Hotspot Manager
+After=network.target NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/__USER__/HeWo/modules/network/wifi_manager.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
