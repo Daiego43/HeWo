@@ -1,0 +1,12 @@
+[Unit]
+Description=Wi-Fi Hotspot (__USER__)
+After=NetworkManager.service
+Wants=NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/__USER__/modules/network/wifi_manager.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

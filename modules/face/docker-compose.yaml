@@ -6,8 +6,7 @@ services:
     image: hewo_face:pygame
     container_name: hewo_face
     privileged: true
-    ports:
-      - "8000:8000"
+    network_mode: host
     environment:
       DISPLAY: $DISPLAY
       PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
@@ -16,3 +15,6 @@ services:
     volumes:
       - /run/user/1000/pulse/native:/run/user/1000/pulse/native
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    cpus: 1.0
+    mem_limit: 0.5g
+

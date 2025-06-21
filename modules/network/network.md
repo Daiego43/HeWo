@@ -10,9 +10,6 @@ Install the driver with the provided script if you need a wifi adapter.
 sudo bash install_RTL8821AU_drivers.sh
 ```
 
-## Setup wifi_hotspot.service
-This service will spawn a hotspot in case you don't have wifi connection.
-```bash
- sudo bash setup_network_manager.sh $(whoami)
-```
+## wifi_hotspot.service
+This service installed will spawn a hotspot in case you don't have wifi connection.
 The service makes use of the script `wifi_manager.sh` in this folder

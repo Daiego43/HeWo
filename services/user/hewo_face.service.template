@@ -1,0 +1,13 @@
+[Unit]
+Description=HeWo Face node
+After=network-online.target
+
+[Service]
+Type=simple
+# Call bash first, then the script, then its argument
+ExecStart=/usr/bin/env bash /home/__USER__/HeWo/run_module.sh face
+# (optional) restart policy, uncomment if you want it to relaunch on exit
+# Restart=on-failure
+
+[Install]
+WantedBy=default.target

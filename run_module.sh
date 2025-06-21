@@ -1,4 +1,5 @@
-module_name="modules/$1"
+#!/bin/bash
+module_name="$HOME/HeWo/modules/$1"
 if [ ! -d "$module_name" ]; then
   echo "Module $module_name does not exist."
   exit 1
