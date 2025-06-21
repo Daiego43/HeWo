@@ -1,0 +1,16 @@
+[Unit]
+Description=Grant local X11 access to root (xhost)
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xhost +SI:localuser:root
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=5s
+StartLimitBurst=0
+
+[Install]
+WantedBy=default.target

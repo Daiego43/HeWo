@@ -5,7 +5,7 @@ Wants=NetworkManager.service
 
 [Service]
 Type=oneshot
-ExecStart=/home/__USER__/modules/network/wifi_manager.sh
+ExecStart=/home/__USER__/HeWo/modules/network/wifi_manager.sh
 RemainAfterExit=true
 
 [Install]
