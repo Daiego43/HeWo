@@ -2,6 +2,10 @@
 
 Hewo tools and package manager. 
 
+## Install dependencies
+In the install folder, there are scripts to install os dependencies like:
+- **wifi antenna driver**
+- **docker**
 
 ## Setup services
 ```bash
