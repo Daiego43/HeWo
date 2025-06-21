@@ -1,4 +1,4 @@
 # Install ROS services
 mkdir -p ~/.config/systemd/user/
-cp wifi_hotspot.service ~/.config/systemd/user
-systemctl --user enable wifi_hotspot.service
+sudo cp wifi_hotspot.service /etc/systemd/system/wifi_hotspot.service
+sudo systemctl enable wifi_hotspot.service

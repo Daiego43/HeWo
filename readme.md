@@ -1,4 +1,3 @@
-Modular Hewo Setup Tool
+HeWo Manager Tools
 ========================
-This is a modular setup tool for Hewo, designed to be flexible and easy to use.
-Hewo modules will be declared at the `modules` directory, 
+Hewo tools and package manager. 

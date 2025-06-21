@@ -16,5 +16,4 @@ RUN apt-get update && apt-get install -y \
     ffmpeg
 
 # ── Copy source ───────────────────────────────────
-COPY ./hewo_module_face /app
-RUN cd /app && pip install . --break-system-packages
+RUN pip install hewo-face --break-system-packages

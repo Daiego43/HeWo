@@ -7,11 +7,11 @@ services:
     container_name: hewo_face
     privileged: true
     ports:
-      - "8000:5000"
+      - "8000:8000"
     environment:
       DISPLAY: $DISPLAY
       PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
-    command: hewo_face
+    command: hewo_face_main
     working_dir: /app
     volumes:
       - /run/user/1000/pulse/native:/run/user/1000/pulse/native
