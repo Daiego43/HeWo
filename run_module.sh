@@ -3,6 +3,7 @@
 set -euo pipefail                              # safer bash defaults
 
 module_dir="$HOME/HeWo/modules/$1"
+module_dir="/home/daiego/ThinThoughProjects/HeWo/modules/$1"
 
 if [[ ! -d "$module_dir" ]]; then
   echo "Module $module_dir does not exist." >&2
@@ -12,20 +13,12 @@ fi
 echo "Running module in $module_dir …"
 cd "$module_dir"
 
-# ─── Launch unclutter to hide the cursor ─────────────────────────
-if command -v unclutter >/dev/null; then
-  # -idle 0   = hide immediately
-  # -root     = work on the whole root window
-  unclutter -idle 0 -root &
-  UNCLUTTER_PID=$!
-  echo "(unclutter started, PID=$UNCLUTTER_PID)"
-else
-  echo "⚠️  unclutter not found; cursor will remain visible"
-fi
+
 # -----------------------------------------------------------------
 
 # ─── Run the module (docker-compose) ─────────────────────────────
 if [[ -f docker-compose.yaml || -f docker-compose.yml ]]; then
+  docker compose rm
   docker compose up
 else
   echo "No docker-compose file found." >&2

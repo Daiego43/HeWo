@@ -10,8 +10,7 @@ hewo_face:
   environment:
     DISPLAY: $DISPLAY
     PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
-  command: hewo_face_main
-  working_dir: /app
+  working_dir: /ros2_ws
   volumes:
     - /run/user/1000/pulse/native:/run/user/1000/pulse/native
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
