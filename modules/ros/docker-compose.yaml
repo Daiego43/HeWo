@@ -10,6 +10,7 @@ services:
       DISPLAY: $DISPLAY
       SDL_VIDEO_X11_ALLOW_SHM: 0
       PULSE_SERVER: unix:/run/user/1000/pulse/native
+      ROS_DOMAIN_ID: 30
     working_dir: /ros2_ws
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw

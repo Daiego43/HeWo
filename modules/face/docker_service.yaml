@@ -4,7 +4,6 @@ hewo_face:
     dockerfile: Dockerfile
   image: hewo_face:pygame
   container_name: hewo_face
-  privileged: true
   ports:
     - "8000:8000"
   environment:
