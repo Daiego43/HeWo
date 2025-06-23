@@ -5,18 +5,14 @@ services:
       dockerfile: Dockerfile
     image: hewo:ros
     container_name: hewo-ros
-    privileged: true
     network_mode: host
     environment:
       DISPLAY: $DISPLAY
-      PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
-    command:
-      - terminator
-      - -u
+      SDL_VIDEO_X11_ALLOW_SHM: 0
+      PULSE_SERVER: unix:/run/user/1000/pulse/native
     working_dir: /ros2_ws
     volumes:
-      - /run/user/1000/pulse/native:/run/user/1000/pulse/native
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-    cpus: 1.0
-    mem_limit: 0.5g
-
+      - /run/user/1000/pulse/native:/run/user/1000/pulse/native
+      - ./ros2_ws:/ros2_ws:rw
+    command: [ terminator, -u ]
