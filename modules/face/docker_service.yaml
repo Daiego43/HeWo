@@ -1,17 +1,14 @@
 hewo_face:
-  build:
-    context: .
-    dockerfile: Dockerfile
-  image: hewo_face:pygame
+  image: hewo_face:latest
   container_name: hewo_face
-  ports:
-    - "8000:8000"
+  network_mode: host
+  working_dir: /ros2_ws
+  command: hewo_face_main
+  cpus: 1.0
+  mem_limit: 0.5g
   environment:
     DISPLAY: $DISPLAY
     PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
-  working_dir: /ros2_ws
   volumes:
     - /run/user/1000/pulse/native:/run/user/1000/pulse/native
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
-  cpus: 1.0
-  mem_limit: 0.5g
