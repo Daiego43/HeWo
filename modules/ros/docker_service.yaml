@@ -7,9 +7,11 @@ hewo_ros:
   command: [ terminator, -u ]
   environment:
     DISPLAY: $DISPLAY
+    XDG_RUNTIME_DIR: $XDG_RUNTIME_DIR
     PULSE_SERVER: unix:/run/user/1000/pulse/native
     ROS_DOMAIN_ID: 30
   volumes:
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
     - /run/user/1000/pulse/native:/run/user/1000/pulse/native
-    - ./development/ros/ros2_ws:/ros2_ws:rw
+    - $HOME/HeWo/development/ros/ros2_ws:/ros2_ws:rw
+    # - $HOME/ThinThoughtProjects/HeWo/development/ros/ros2_ws:/ros2_ws:rw

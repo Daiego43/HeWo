@@ -9,16 +9,16 @@ mkdir -p "$unit_dir"
 
 install_unit () {
   local template=$1 target=$2
-  sed "s|__USER__|$USER|g" "$template" > "$unit_dir/$target"
+  sed "s|__USER__|%u|g" "$template" > "$unit_dir/$target"
   echo "· Copied $target"
 }
 
 echo "Installing user units for $USER…"
 
 install_unit xhost.service.template      xhost.service
-# install_unit hewo_face.service.template  hewo_face.service
+install_unit hewo_face.service.template  hewo_face.service
 
 systemctl --user daemon-reload
-systemctl --user enable --now xhost.service # hewo_face.service
+systemctl --user enable --now xhost.service hewo_face.service
 
 echo "✅  User units enabled."

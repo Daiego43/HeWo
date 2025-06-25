@@ -2,10 +2,12 @@
 Description=HeWo Face node
 Requires=xhost.service
 
-
 [Service]
 Type=simple
-ExecStart=/home/__USER__/HeWo/run_module.sh face
+EnvironmentFile=/home/__USER__/HeWo/scripts/hewo_cli.sh
+WorkingDirectory=/home/__USER__
+ExecStart=/bin/bash -c 'hewo run face'
+User=__USER__
 
 [Install]
 WantedBy=default.target
