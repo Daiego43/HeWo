@@ -34,7 +34,6 @@ def deploy(modules, run_after=True):
             print(f"No docker_service.yaml in '{module}', skipping.")
 
     full_compose = {
-        "version": "3",
         "services": {}
     }
     for s in services:
@@ -46,7 +45,7 @@ def deploy(modules, run_after=True):
 
     print(f"Generated deploy file with: {', '.join(modules)}")
     if run_after:
-        subprocess.run(["docker", "compose", "-f", str(deploy_path), "up", "-d", "--force-recreate"], check=True)
+        subprocess.run(["docker", "compose", "-f", str(deploy_path), "up", "--force-recreate"], check=True)
 
 def stop():
     deploy_path = Path.cwd() / "hewo_deploy.yaml"

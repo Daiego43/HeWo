@@ -2,7 +2,11 @@
 
 # Ejecuta la CLI de Python
 hewo() {
-    python3 "$HOME/ThinThoughtProjects/HeWo/scripts/hewo_cli.py" "$@"
+    if [[ "$(hostname)" == "hewopc" ]]; then
+        python3 "$HOME/HeWo/scripts/hewo_cli.py" "$@"
+    else
+        python3 "$HOME/ThinThoughtProjects/HeWo/scripts/hewo_cli.py" "$@"
+    fi
 }
 
 # Autocompletado para la CLI de HeWo

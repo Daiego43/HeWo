@@ -9,6 +9,7 @@ hewo_face:
   environment:
     DISPLAY: $DISPLAY
     PULSE_SERVER: 'unix:/run/user/1000/pulse/native'
+    XDG_RUNTIME_DIR: $XDG_RUNTIME_DIR
   volumes:
     - /run/user/1000/pulse/native:/run/user/1000/pulse/native
     - /tmp/.X11-unix:/tmp/.X11-unix:rw

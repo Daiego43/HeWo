@@ -16,9 +16,9 @@ install_unit () {
 echo "Installing user units for $USER…"
 
 install_unit xhost.service.template      xhost.service
-install_unit hewo_face.service.template  hewo_face.service
+# install_unit hewo_face.service.template  hewo_face.service
 
 systemctl --user daemon-reload
-systemctl --user enable --now xhost.service hewo_face.service
+systemctl --user enable --now xhost.service # hewo_face.service
 
 echo "✅  User units enabled."

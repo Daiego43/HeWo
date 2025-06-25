@@ -20,5 +20,6 @@ install_unit wifi_hotspot.service.template  wifi_hotspot.service
 
 systemctl daemon-reload
 systemctl enable --now wifi_hotspot.service
+systemctl enable --now avahi_daemon.service
 
 echo "✅  System units enabled."
