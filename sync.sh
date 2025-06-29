@@ -1,4 +1,4 @@
-HEWO_USER=daiego
-HEWO_HOST=192.168.1.117
-HEWO_PASS=daiego1234
+HEWO_USER=$1
+HEWO_HOST=$2
+HEWO_PASS=$3
 sshpass -p "$HEWO_PASS" rsync -avz ./* $HEWO_USER@$HEWO_HOST:/home/$HEWO_USER/HeWo

@@ -2,11 +2,7 @@
 
 # Ejecuta la CLI de Python
 hewo() {
-    if [[ "$(hostname)" == "hewopc" ]]; then
-        python3 "$HOME/HeWo/scripts/hewo_cli.py" "$@"
-    else
-        python3 "$HOME/ThinThoughtProjects/HeWo/scripts/hewo_cli.py" "$@"
-    fi
+    python3 "$HOME/HeWo/scripts/hewo_cli.py" "$@"
 }
 
 # Autocompletado para la CLI de HeWo
@@ -15,7 +11,7 @@ _hewo_completions() {
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    modules_dir="$HOME/ThinThoughtProjects/HeWo/modules"
+    modules_dir="$HOME/HeWo/modules"
 
     opts="build run deploy stop"
 
