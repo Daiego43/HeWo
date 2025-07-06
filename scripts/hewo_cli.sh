@@ -2,7 +2,7 @@
 
 # Ejecuta la CLI de Python
 hewo() {
-    python3 "$HOME/HeWo/scripts/hewo_cli.py" "$@"
+    python3 "$HOME/ThinThoughtProjects/HeWo/scripts/hewo_cli.py" "$@"
 }
 
 # Autocompletado para la CLI de HeWo
